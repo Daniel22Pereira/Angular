@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Clip } from '../clip.model';
 
 @Component({
   selector: 'app-clip-list',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './clip-list.component.css'
 })
 export class ClipListComponent {
+
+  clipList: Clip[] = [];
 
 }
