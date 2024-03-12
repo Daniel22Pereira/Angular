@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { YoutubeService } from '../../youtube.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-clip-item',
@@ -7,13 +6,12 @@ import { YoutubeService } from '../../youtube.service';
   styleUrls: ['./clip-item.component.css']
 })
 export class ClipItemComponent implements OnInit {
-  videoName: string;
-  videoUrl: string = 'https://www.youtube.com/watch?v=PqGnP9pfZZU';
 
-  constructor(private youtubeService: YoutubeService) { }
+  @Input() videoName: string;
+  @Input() videoThumbnail: string;
+
+  constructor() {}
 
   ngOnInit(): void {
-    const videoId = this.youtubeService.getVideoId(this.videoUrl);
-    this.youtubeService.getVideoName(videoId).subscribe(name => this.videoName = name);
   }
 }

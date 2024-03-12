@@ -8,6 +8,10 @@ import { map } from 'rxjs/operators';
 export class YoutubeService {
 
   apiKey : string = 'AIzaSyDu3LTYJJIU8UnkgdGVAsrLLpV2_UsLB8w';
+  VideoName: string;
+  VideoDescription: string;
+  VideoThumbnail: string;
+  VideoLink: string;
 
   constructor(public http: HttpClient) { }
 
@@ -20,10 +24,30 @@ export class YoutubeService {
     return videoId;
   }
 
-  getVideoName(videoId: string) {
+  setVideoData(videoId: string) {
     return this.http.get('https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + videoId + '&key=' + this.apiKey)
-      .pipe(map((response: any) => {
-        return response.items[0].snippet.title;
+      .pipe(map((res) => {
+        this.VideoName = res['items'][0].snippet.title;
+        this.VideoDescription = res['items'][0].snippet.description;
+        this.VideoThumbnail = res['items'][0].snippet.thumbnails.maxres.url;
+        this.VideoLink = 'https://www.youtube.com/watch?v=' + videoId;
       }));
   }
+
+  getVideoName() {
+    return this.VideoName;
+  }
+
+  getVideoDescription() {
+    return this.VideoDescription;
+  }
+
+  getVideoThumbnail() {
+    return this.VideoThumbnail;
+  }
+
+  getVideoLink() {
+    return this.VideoLink;
+  }
+  
 }

@@ -8,12 +8,14 @@ import { YoutubeService } from './youtube.service';
 import { AppComponent } from './app.component';
 import { ClipListComponent } from './clips/clip-list/clip-list.component';
 import { ClipItemComponent } from './clips/clip-item/clip-item.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClipListComponent,
     ClipItemComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
