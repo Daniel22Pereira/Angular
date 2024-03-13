@@ -22,16 +22,11 @@
             </div>
           </div>
         </div>
-        <a
-          href="/"
-          class="text-white font-bold text-lg p-2 border-b-2 hover:bg-orange-600 rounded-md rounded-b-none"
-          >Home</a
-        >
       </div>
 
       <div class="flex items-center">
-        <a
-          class="text-white font-semibold px-6 py-2 border bg-purple-900 hover:bg-orange-600 rounded-lg"
+        <a (click)="showModal = true"
+          class="text-white font-semibold px-6 py-2 border bg-purple-900 hover:bg-orange-600 hover:cursor-pointer rounded-lg "
           >Share a video !</a
         >
       </div>
@@ -40,4 +35,5 @@
   <div class="h-[88%] w-[100%]">
     <router-outlet></router-outlet>
   </div>
+  <app-modal [hidden]="!showModal" (showModal)="showModal = false" (addVideo)="onAddVideo($event)" ></app-modal>
 </div>

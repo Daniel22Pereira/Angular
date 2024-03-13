@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { YoutubeService } from './youtube.service';
+import { YoutubeService } from './services/youtube.service';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ClipListComponent } from './clips/clip-list/clip-list.component';
@@ -22,6 +24,8 @@ import { ModalComponent } from './modal/modal.component';
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     YoutubeService

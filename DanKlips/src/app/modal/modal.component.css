@@ -1,0 +1,7 @@
+.border-red-500 {
+  border-color: red;
+}
+
+.text-red-500::placeholder {
+  color: red;
+}
