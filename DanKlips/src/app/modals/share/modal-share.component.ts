@@ -2,11 +2,11 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  selector: 'app-modal-share',
+  templateUrl: './modal-share.component.html',
+  styleUrls: ['./modal-share.component.css']
 })
-export class ModalComponent {
+export class ModalShareComponent {
 
   @Output() addVideo = new EventEmitter<string>();
   @Output() showModal = new EventEmitter<boolean>();

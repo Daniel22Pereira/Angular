@@ -35,5 +35,5 @@
   <div class="h-[88%] w-[100%]">
     <router-outlet></router-outlet>
   </div>
-  <app-modal [hidden]="!showModal" (showModal)="showModal = false" (addVideo)="onAddVideo($event)" ></app-modal>
+  <app-modal-share [hidden]="!showModal" (showModal)="showModal = false" (addVideo)="onAddVideo($event)" ></app-modal-share>
 </div>

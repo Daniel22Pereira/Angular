@@ -10,14 +10,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ClipListComponent } from './clips/clip-list/clip-list.component';
 import { ClipItemComponent } from './clips/clip-item/clip-item.component';
-import { ModalComponent } from './modal/modal.component';
+import { ModalShareComponent } from './modals/share/modal-share.component';
+import { ModalDeleteComponent } from './modals/delete/modal-delete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClipListComponent,
     ClipItemComponent,
-    ModalComponent,
+    ModalShareComponent,
+    ModalDeleteComponent,
   ],
   imports: [
     BrowserModule,
