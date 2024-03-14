@@ -18,8 +18,8 @@ export class VideoService {
     return this.videosUpdated.asObservable();
   }
 
-  addVideo(videoLink: string, videoName: string, videoThumbnail: string): void {
-    const newClip = { link: videoLink, name: videoName, thumbnail: videoThumbnail, addedAt: new Date().toISOString() };
+  addVideo(videoId:string, videoLink: string, videoName: string, videoThumbnail: string): void {
+    const newClip = { id:videoId, link: videoLink, name: videoName, thumbnail: videoThumbnail, addedAt: new Date().toISOString() };
     supabase.from('videos').insert([newClip]).then(() => {
       this.videosUpdated.next();
     });
@@ -28,6 +28,12 @@ export class VideoService {
   getVideos() {
     return from(supabase.from('videos').select('*')).pipe(
       map(response => response.data as Clip[])
+    );
+  }
+
+  getVideo(id: string) {
+    return from(supabase.from('videos').select('*').eq('id', id)).pipe(
+      map(response => response.data[0] as Clip)
     );
   }
 

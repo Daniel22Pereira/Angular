@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { VideoService } from '../../services/video.service';
 
 @Component({
@@ -11,6 +11,7 @@ export class ClipItemComponent {
   @Input() videoName: string;
   @Input() videoThumbnail: string;
   @Input() videoLink: string;
+  @Input() videoId: string;
 
   showModal: boolean = false;
 

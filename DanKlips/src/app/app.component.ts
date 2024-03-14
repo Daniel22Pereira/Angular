@@ -19,7 +19,7 @@ export class AppComponent {
     this.youtubeService.setVideoData(videoId).subscribe(() => {
       const videoName = this.youtubeService.getVideoName();
       const videoThumbnail = this.youtubeService.getVideoThumbnail();
-      this.videoService.addVideo(videoLink, videoName, videoThumbnail);
+      this.videoService.addVideo(videoId, videoLink, videoName, videoThumbnail);
     });
   }
 }

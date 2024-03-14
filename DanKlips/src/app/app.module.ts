@@ -12,6 +12,7 @@ import { ClipListComponent } from './clips/clip-list/clip-list.component';
 import { ClipItemComponent } from './clips/clip-item/clip-item.component';
 import { ModalShareComponent } from './modals/share/modal-share.component';
 import { ModalDeleteComponent } from './modals/delete/modal-delete.component';
+import { ClipDetailsComponent } from './clips/clip-details/clip-details.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ModalDeleteComponent } from './modals/delete/modal-delete.component';
     ClipItemComponent,
     ModalShareComponent,
     ModalDeleteComponent,
+    ClipDetailsComponent,
   ],
   imports: [
     BrowserModule,
