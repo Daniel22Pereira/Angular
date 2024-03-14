@@ -30,4 +30,10 @@ export class VideoService {
       map(response => response.data as Clip[])
     );
   }
+
+  deleteVideo(link: string) {
+    supabase.from('videos').delete().match({ link }).then(() => {
+      this.videosUpdated.next();
+    });
+  }
 }
