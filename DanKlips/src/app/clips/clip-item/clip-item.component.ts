@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { VideoService } from '../../services/video.service';
 
 @Component({
@@ -6,15 +6,22 @@ import { VideoService } from '../../services/video.service';
   templateUrl: './clip-item.component.html',
   styleUrls: ['./clip-item.component.css']
 })
-export class ClipItemComponent implements OnInit {
+export class ClipItemComponent {
 
   @Input() videoName: string;
   @Input() videoThumbnail: string;
   @Input() videoLink: string;
 
+  showModal: boolean = false;
+
   constructor(private videoService: VideoService) { }
 
-  ngOnInit(): void {
+  openModal(): void {
+    this.showModal = true;
+  }
+
+  closeModal(): void {
+    this.showModal = false;
   }
 
   deleteVideo(): void {
